@@ -1177,12 +1177,20 @@ function Player(x, y, z) {
             }
         }
         if (this.keyboard.pressed("A")) {
-            this.chunk.mesh.rotation.y += (this.speed * delta / 7);
-            this.moving = true;
+            this.chunk.mesh.translateX(this.speed * delta);
+            if(this.cd()) {
+                this.moving = true;
+            } else {
+                this.chunk.mesh.translateX(-this.speed * delta);
+            }
         }
         if (this.keyboard.pressed("D")) {
-            this.chunk.mesh.rotation.y -= (this.speed * delta / 7);
-            this.moving = true;
+            this.chunk.mesh.translateX(-this.speed * delta);
+            if(this.cd()) {
+                this.moving = true;
+            } else {
+                this.chunk.mesh.translateX(this.speed * delta);
+            }
         }
         if (this.keyboard.pressed("R")) {
             this.flashlight.visible = false;
