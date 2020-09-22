@@ -1,5 +1,5 @@
 # Voxelengine3
-Play a demo here: http://qake.se/demo2
+Play a demo here: https://qake.se/demo2
 
 ## Description
 Voxelengine3 is a ThreeJS WebGL voxel engine.
